@@ -28,6 +28,6 @@ To make it easy to understand the allowed schema, you can access the apis from t
 The following of works will make the project more prod ready but can't be implemented within the limited time.
 
 1. CRUD for `Course` resource
-2. Separation of profiles to `dev`, `test`, `prod`
+2. Separation of profiles to `dev`, `test` and `prod`
 3. Separation of DB and disable swagger in prod
 4. Containerization
