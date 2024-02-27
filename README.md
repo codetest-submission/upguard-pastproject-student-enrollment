@@ -1,6 +1,6 @@
 ### Environment Setup
 
-1. **Install JDK 11 locally** This project was developed with Java 17 which is also required by the version of 
+1. **Install JDK 11 locally** This project was developed with Java 11 which is also required by the version of 
 SpringBoot and Gradle used in this project.
 2. **Clone the code from GitHub** https://github.com/larry-han-au/student-enrollment-larry
 
