@@ -37,8 +37,8 @@ public class StudentService {
 
         Student student = studentRepository.findById(studentId).orElseThrow(
                 () -> new ResponseStatusException(HttpStatus.NOT_FOUND, "Student not found with id: " + studentId));
-//        student.getCourses().clear();
-//        studentRepository.save(student);
+        student.getCourses().clear();
+        studentRepository.save(student);
         studentRepository.deleteById(studentId);
     }
 
