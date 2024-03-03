@@ -21,11 +21,7 @@ public class Course {
         private String description;
         private String code;
 
-    @ManyToMany(cascade = {CascadeType.PERSIST, CascadeType.MERGE, CascadeType.REFRESH})
-    @JoinTable(
-            name = "enrollments",
-            joinColumns = @JoinColumn(name = "course_id"),
-            inverseJoinColumns = @JoinColumn(name = "student_id"))
+    @ManyToMany(mappedBy = "courses")
     @Builder.Default
     private Set<Student> students = new HashSet<>();
 }

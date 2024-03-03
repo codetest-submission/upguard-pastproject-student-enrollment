@@ -24,8 +24,6 @@ import static org.springframework.test.web.servlet.result.MockMvcResultMatchers.
 @WebMvcTest(StudentController.class)
 public class StudentControllerTest {
 
-    private static final String API_URL = "/api/v1/students";
-
     @Autowired
     private MockMvc mockMvc;
 
@@ -49,7 +47,7 @@ public class StudentControllerTest {
     @Test
     void shouldCreateStudent() throws Exception {
         given(studentService.createStudent(studentRequestDTO)).willReturn(studentResponseDTO);
-        mockMvc.perform(post(API_URL)
+        mockMvc.perform(post("/api/v1/students")
                         .contentType(MediaType.APPLICATION_JSON)
                         .content(objectMapper.writeValueAsString(studentRequestDTO)))
                 .andExpect(status().isCreated())
@@ -61,7 +59,6 @@ public class StudentControllerTest {
     void shouldRetrieveAllStudents() throws Exception {
         List<StudentResponseDTO> allStudents = Collections.singletonList(studentResponseDTO);
         given(studentService.getAllStudents(null)).willReturn(allStudents);
-
         mockMvc.perform(get("/api/v1/students"))
                 .andExpect(status().isOk())
                 .andExpect(content().contentType(MediaType.APPLICATION_JSON))
@@ -95,10 +92,14 @@ public class StudentControllerTest {
 
     @Test
     void enrollStudentToCourseTest() throws Exception {
-        given(studentService.enrollStudentToCourse(studentResponseDTO.getId(), 0)).willReturn(enrollmentDTO);
+        given(studentService.enrollStudentToCourse(studentResponseDTO.getId(), 2)).willReturn(enrollmentDTO);
 
-        mockMvc.perform(post("/api/v1/students/{studentId}/courses/{courseId}", studentResponseDTO.getId(), 2))
-                .andExpect(status().isCreated());
+        mockMvc.perform(post("/api/v1/students/{studentId}/courses/{courseId}", studentResponseDTO.getId(), 2)
+                        .contentType(MediaType.APPLICATION_JSON))
+                .andExpect(status().isCreated())
+                .andExpect(content().contentType(MediaType.APPLICATION_JSON))
+                .andExpect(jsonPath("$.studentId", is((int) studentResponseDTO.getId())))
+                .andExpect(jsonPath("$.courseId", is(2)));
     }
 
     @Test

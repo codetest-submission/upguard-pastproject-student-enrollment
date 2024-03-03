@@ -34,8 +34,11 @@ public class StudentService {
     }
 
     public void deleteStudentById(long studentId) {
-        studentRepository.findById(studentId).orElseThrow(
+
+        Student student = studentRepository.findById(studentId).orElseThrow(
                 () -> new ResponseStatusException(HttpStatus.NOT_FOUND, "Student not found with id: " + studentId));
+//        student.getCourses().clear();
+//        studentRepository.save(student);
         studentRepository.deleteById(studentId);
     }
 
@@ -66,7 +69,7 @@ public class StudentService {
                 .orElseThrow(() -> new ResponseStatusException(HttpStatus.NOT_FOUND, "Student not found"));
         Course course = courseRepository.findById(courseId)
                 .orElseThrow(() -> new ResponseStatusException(HttpStatus.NOT_FOUND, "Course not found"));
-        course.getStudents().add(student);
+        student.getCourses().add(course);
         courseRepository.save(course);
         return EnrollmentDTO.builder().studentId(studentId).courseId(courseId).build();
     }
@@ -85,7 +88,9 @@ public class StudentService {
 
     private StudentResponseDTO entityToStudentResponseDTO(Student student) {
         return StudentResponseDTO.builder().
-                id(student.getId()).name(student.getName()).age(student.getAge()).build();
+                id(student.getId()).name(student.getName()).age(student.getAge()).
+                courseIds(student.getCourses().stream().map(Course::getId).collect(Collectors.toList())).
+                build();
     }
 }
 
