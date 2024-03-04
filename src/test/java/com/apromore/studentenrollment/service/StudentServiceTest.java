@@ -31,11 +31,6 @@ public class StudentServiceTest {
     @Mock
     private CourseRepository courseRepositoryMock;
 
-    @BeforeEach
-    public void setUp() {
-        studentService = new StudentService(studentRepositoryMock, courseRepositoryMock);
-    }
-
     @Test
     public void shouldCreateStudent() {
         StudentRequestDTO requestDTO = new StudentRequestDTO();

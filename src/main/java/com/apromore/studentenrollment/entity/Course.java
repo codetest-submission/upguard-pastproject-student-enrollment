@@ -17,9 +17,9 @@ public class Course {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
 
-        private String name;
-        private String description;
-        private String code;
+    private String name;
+    private String description;
+    private String code;
 
     @ManyToMany(mappedBy = "courses")
     @Builder.Default
