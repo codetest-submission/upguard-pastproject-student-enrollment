@@ -166,7 +166,6 @@ public class StudentServiceTest {
 
         when(studentRepositoryMock.findById(studentId)).thenReturn(Optional.of(student));
         when(courseRepositoryMock.findById(courseId)).thenReturn(Optional.of(course));
-        when(courseRepositoryMock.save(course)).thenReturn(course);
 
         EnrollmentDTO result = studentService.enrollStudentToCourse(studentId, courseId);
 

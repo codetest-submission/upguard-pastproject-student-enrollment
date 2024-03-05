@@ -70,7 +70,7 @@ public class StudentService {
         Course course = courseRepository.findById(courseId)
                 .orElseThrow(() -> new ResponseStatusException(HttpStatus.NOT_FOUND, "Course not found"));
         student.getCourses().add(course);
-        courseRepository.save(course);
+        studentRepository.save(student);
         return EnrollmentDTO.builder().studentId(studentId).courseId(courseId).build();
     }
     public void unEnrollStudentsEnrolledToCourse(long studentId, long courseId) {
@@ -78,8 +78,8 @@ public class StudentService {
                 .orElseThrow(() -> new ResponseStatusException(HttpStatus.NOT_FOUND, "Student not found"));
         Course course = courseRepository.findById(courseId)
                 .orElseThrow(() -> new ResponseStatusException(HttpStatus.NOT_FOUND, "Course not found"));
-        course.getStudents().remove(student);
-        courseRepository.save(course);
+        student.getCourses().remove(course);
+        studentRepository.save(student);
     }
 
     private Student entityFromStudentRequestDTO(StudentRequestDTO studentRequestDTO) {
