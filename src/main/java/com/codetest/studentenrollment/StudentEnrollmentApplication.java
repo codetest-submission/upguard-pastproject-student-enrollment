@@ -1,4 +1,4 @@
-package com.apromore.studentenrollment;
+package com.codetest.studentenrollment;
 
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
@@ -16,7 +16,7 @@ public class StudentEnrollmentApplication {
     public Docket api() {
         return new Docket(DocumentationType.SWAGGER_2)
                 .select()
-                .apis(RequestHandlerSelectors.basePackage( "com.apromore.studentenrollment" ))
+                .apis(RequestHandlerSelectors.basePackage( "com.codetest.studentenrollment" ))
                 .paths(PathSelectors.any()).build();
     }
 

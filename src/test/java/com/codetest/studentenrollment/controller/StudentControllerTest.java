@@ -1,9 +1,9 @@
-package com.apromore.studentenrollment.controller;
+package com.codetest.studentenrollment.controller;
 
-import com.apromore.studentenrollment.dto.EnrollmentDTO;
-import com.apromore.studentenrollment.dto.StudentRequestDTO;
-import com.apromore.studentenrollment.dto.StudentResponseDTO;
-import com.apromore.studentenrollment.service.StudentService;
+import com.codetest.studentenrollment.dto.EnrollmentDTO;
+import com.codetest.studentenrollment.dto.StudentRequestDTO;
+import com.codetest.studentenrollment.dto.StudentResponseDTO;
+import com.codetest.studentenrollment.service.StudentService;
 import com.fasterxml.jackson.databind.ObjectMapper;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;

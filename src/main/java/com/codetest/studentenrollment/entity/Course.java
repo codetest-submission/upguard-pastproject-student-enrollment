@@ -1,4 +1,4 @@
-package com.apromore.studentenrollment.entity;
+package com.codetest.studentenrollment.entity;
 
 import lombok.*;
 

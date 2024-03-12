@@ -1,4 +1,4 @@
-package com.apromore.studentenrollment.dto;
+package com.codetest.studentenrollment.dto;
 
 import lombok.AllArgsConstructor;
 import lombok.Builder;
@@ -9,7 +9,7 @@ import lombok.NoArgsConstructor;
 @Builder
 @NoArgsConstructor
 @AllArgsConstructor
-public class StudentRequestDTO {
-    private String name;
-    private Integer age;
+public class EnrollmentDTO {
+    private long courseId;
+    private long studentId;
 }

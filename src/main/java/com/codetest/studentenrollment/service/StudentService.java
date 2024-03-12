@@ -1,12 +1,12 @@
-package com.apromore.studentenrollment.service;
+package com.codetest.studentenrollment.service;
 
-import com.apromore.studentenrollment.dto.EnrollmentDTO;
-import com.apromore.studentenrollment.dto.StudentRequestDTO;
-import com.apromore.studentenrollment.dto.StudentResponseDTO;
-import com.apromore.studentenrollment.entity.Course;
-import com.apromore.studentenrollment.entity.Student;
-import com.apromore.studentenrollment.repository.CourseRepository;
-import com.apromore.studentenrollment.repository.StudentRepository;
+import com.codetest.studentenrollment.dto.EnrollmentDTO;
+import com.codetest.studentenrollment.dto.StudentRequestDTO;
+import com.codetest.studentenrollment.dto.StudentResponseDTO;
+import com.codetest.studentenrollment.entity.Course;
+import com.codetest.studentenrollment.entity.Student;
+import com.codetest.studentenrollment.repository.CourseRepository;
+import com.codetest.studentenrollment.repository.StudentRepository;
 import lombok.RequiredArgsConstructor;
 import org.springframework.http.HttpStatus;
 import org.springframework.stereotype.Service;

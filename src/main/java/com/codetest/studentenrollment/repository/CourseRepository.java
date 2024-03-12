@@ -1,6 +1,6 @@
-package com.apromore.studentenrollment.repository;
+package com.codetest.studentenrollment.repository;
 
-import com.apromore.studentenrollment.entity.Course;
+import com.codetest.studentenrollment.entity.Course;
 import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.stereotype.Repository;
 
