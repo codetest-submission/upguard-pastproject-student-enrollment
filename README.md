@@ -31,3 +31,7 @@ The following of works will make the project more prod ready but can't be implem
 2. Separation of profiles to `dev`, `test` and `prod`
 3. Separation of DB and disable swagger in prod
 4. Containerization
+
+## Attached code test requirements
+
+![img.png](code-test-requirements.png)
